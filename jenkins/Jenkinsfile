@@ -12,6 +12,7 @@ pipeline {
             steps {
                 dir ('docker') {
                     sh 'pwd'
+                    sh 'ls -la'
               sh 'docker build -t astr1k/myproj:latest .'
             }
         }
