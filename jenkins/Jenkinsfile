@@ -11,6 +11,7 @@ pipeline {
         stage('Build') { 
             steps {
                 dir ('docker') {
+                    sh 'pwd'
               sh 'docker build -t astr1k/myproj:latest .'
             }
         }
