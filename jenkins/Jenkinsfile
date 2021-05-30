@@ -10,16 +10,12 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                dir ('docker') {
-                    sh 'pwd'
-                    sh 'ls -la /var/jenkins_home/workspace/Proj'
               sh 'docker build -t astr1k/myproj:latest .'
             }
         }
     }
         stage('Deploy') { 
             steps {
-                
                 sh 'docker push astr1k/myproj:latest' 
             }
         }       
