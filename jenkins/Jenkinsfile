@@ -12,7 +12,7 @@ pipeline {
             steps {
                 dir ('docker') {
                     sh 'pwd'
-                    sh 'ls -la'
+                    sh 'ls -la /var/jenkins_home/workspace/Proj'
               sh 'docker build -t astr1k/myproj:latest .'
             }
         }
