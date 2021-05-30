@@ -9,7 +9,7 @@ var img = document.getElementById("img");
 
 function imgShow(num) {
 	var num = Math.floor(Math.random() * 6);
-	img.style.backgroundImage = 'url("' + images[num] +'")';
+	var num = Math.floor(Math.random() * images.length);
 	img.style.backgroundRepeat = "no-repeat";
 }
 imgShow();
