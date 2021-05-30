@@ -1,14 +1,23 @@
 pipeline {
     agent any 
     stages {
+        stage('Login') {
+            steps {
+                    withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]){
+                    sh 'docker login -u astr1k -p $PASSWORD'
+                    }
+            }
+        }
         stage('Build') { 
             steps {
-              sh 'docker build -t astr1k/myproj docker/Dockerfile'
+                dir ('docker') {
+              sh 'docker build -t astr1k/myproj:latest .'
             }
         }
         stage('Deploy') { 
             steps {
-                sh 'docker push astr1k/myproj' 
+                
+                sh 'docker push astr1k/myproj:latest' 
             }
         }       
     }
