@@ -13,11 +13,11 @@ pipeline {
               sh 'docker build -t astr1k/myproj:latest .'
             }
         }
-    }
+    
         stage('Deploy') { 
             steps {
                 sh 'docker push astr1k/myproj:latest' 
             }
         }       
     }
-  }
+ }
