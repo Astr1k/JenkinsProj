@@ -8,8 +8,8 @@ var images = [
 var img = document.getElementById("img");
 
 function imgShow(num) {
-	var num = Math.floor(Math.random() * 6);
-	var num = Math.floor(Math.random() * images.length);
+        var num = Math.floor(Math.random() * images.length);
+	img.style.backgroundImage = 'url(' + images[num] + ')';
 	img.style.backgroundRepeat = "no-repeat";
 }
 imgShow();
