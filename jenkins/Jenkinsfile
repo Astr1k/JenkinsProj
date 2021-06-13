@@ -14,7 +14,7 @@ pipeline {
             }
         }
     
-        stage('Deploy') { 
+        stage('Push') { 
             steps {
                 sh 'docker push astr1k/myproj:latest' 
             }
